@@ -13,7 +13,6 @@ public class MainActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        @Override
         setContentView(R.layout.activity_main);
         Usuario= (EditText)  findViewById(R.id.txtUsuario);
         Contraseña=(EditText) findViewById(R.id.txtPass);
