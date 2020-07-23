@@ -7,7 +7,7 @@
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="325dp"
-        android:layout_height="195dp"
+        android:layout_height="136dp"
         android:layout_weight="1"
         app:srcCompat="@drawable/francisb" />
 
@@ -35,14 +35,6 @@
 
         <EditText
             android:id="@+id/tvApellido"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name" />
-
-        <EditText
-            android:id="@+id/editText4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"

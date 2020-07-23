@@ -17,7 +17,7 @@ public class Notas extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notas);
-        ed0=findViewById(R.id.txtCodigo);
+        ed0=findViewById(R.id.txtCod);
         ed1= findViewById(R.id.txtCedula);
         ed2= findViewById(R.id.txtNombre);
         ed3=findViewById(R.id.txtApellido);
@@ -28,17 +28,21 @@ public class Notas extends AppCompatActivity {
 
 
     }
-    public void  Buscar(View v){
+    public void  Buscarnota(View v){
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administracion",null,1);
         SQLiteDatabase db= admin.getWritableDatabase();
         String cedula= ed1.getText().toString();
         if(!cedula.isEmpty() ){
             Cursor fila=db.rawQuery
-                    ("select nombre, apellido from notas where cedula="+ cedula, null);
+                    ("select nombre, apellido, nota1, nota2, nota3, total from notas where cedula="+ cedula, null);
             if(fila.moveToFirst()){
 
                 ed2.setText(fila.getString(0));
                 ed3.setText(fila.getString(1));
+                ed4.setText(fila.getString(2));
+                ed5.setText(fila.getString(3));
+                ed6.setText(fila.getString(4));
+                ed7.setText(fila.getString(5));
 
                 ;
                 db.close();
@@ -138,6 +142,14 @@ public class Notas extends AppCompatActivity {
             if(cantidad==1)
             {
                 Toast.makeText(this,"Articulo Modificado Exitosamente", Toast.LENGTH_SHORT).show();
+                ed0.setText("");
+                ed1.setText("");
+                ed2.setText("");
+                ed3.setText("");
+                ed4.setText("");
+                ed5.setText("");
+                ed6.setText("");
+                ed7.setText("");
 
             }else{
                 Toast.makeText(this,"Articulo no existe", Toast.LENGTH_SHORT).show();

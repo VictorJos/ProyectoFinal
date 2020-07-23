@@ -30,7 +30,7 @@ public class Menu extends AppCompatActivity {
         startActivity(intent);
     }
     public void ListadoAprobados(View v){
-        Intent intent= new Intent(Menu.this, ListadoDeAprobados.class);
+        Intent intent= new Intent(Menu.this, mostarLista.class);
         Toast.makeText(getApplicationContext(),"Bienvenido Listado De Aprobados",Toast.LENGTH_LONG).show();
         startActivity(intent);
     }

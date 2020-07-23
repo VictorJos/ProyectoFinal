@@ -4,13 +4,14 @@
     android:id="@+id/principal"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    android:background="#3448B3"
+    android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/num_telefono"
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
-        android:background="#03A9F4"
+        android:background="#F6F3F0"
         android:baselineAligned="true"
         android:orientation="vertical">
 
@@ -19,44 +20,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="   Nuevo Estudiante"
-            android:textColor="#0C0C0C"
-            android:textSize="18sp" />
+            android:textColor="@color/design_default_color_on_secondary"
+            android:textSize="30sp" />
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="157dp"
             app:srcCompat="@drawable/francisb" />
 
         <EditText
-            android:id="@+id/txtCodigo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Codigo"
-            android:inputType="textPersonName"
-            android:textSize="12sp" />
-
-        <EditText
-            android:id="@+id/tvCedula"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Nombres"
-            android:inputType="textPersonName"
-            android:textSize="12sp" />
-
-        <EditText
-            android:id="@+id/tvNombre"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Apellidos"
-            android:inputType="textPersonName"
-            android:textSize="12sp" />
-
-        <EditText
-            android:id="@+id/tvCedula"
+            android:id="@+id/txtCodigo1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -65,16 +39,25 @@
             android:textSize="12sp" />
 
         <EditText
-            android:id="@+id/txtCorreo"
+            android:id="@+id/txtNombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Correo"
+            android:hint="Nombre1, Nombre2"
             android:inputType="textPersonName"
             android:textSize="12sp" />
 
         <EditText
-            android:id="@+id/txtTelefono"
+            android:id="@+id/txtApellido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Apellido1,Apellido2"
+            android:inputType="textPersonName"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/txtCedula"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -82,84 +65,71 @@
             android:inputType="textPersonName"
             android:textSize="12sp" />
 
-        <EditText
-            android:id="@+id/txtNombrer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Nombre Del Representante"
-            android:inputType="textPersonName"
-            android:textSize="12sp" />
-
-        <EditText
-            android:id="@+id/txtDireccion"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Direccion"
-            android:inputType="textPersonName"
-            android:textSize="12sp" />
-
-
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="60dp"
             android:orientation="horizontal">
 
-
-            <Button
-                android:id="@+id/button4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="BuscarAlumnos"
-                android:text="Buscar" />
-
-            <Button
-                android:id="@+id/btnFoto"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Camara" />
-
-            <Button
-                android:id="@+id/button6"
+            <ImageButton
+                android:id="@+id/imageButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="RegistrarAlumno"
-                android:text="GUARDAR" />
+                app:srcCompat="@drawable/guardar1" />
+
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="BuscarAlumnos"
+                app:srcCompat="@drawable/buscar1" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="60dp"
             android:orientation="horizontal">
 
-
-            <Button
-                android:id="@+id/button"
+            <ImageButton
+                android:id="@+id/imageButton3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="EliminarAlumnos"
-                android:text="ELIMINAR" />
+                app:srcCompat="@drawable/eliminar1" />
 
-            <Button
-                android:id="@+id/button34"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="Menu"
-                android:text="MENU" />
-
-            <Button
-                android:id="@+id/button12"
+            <ImageButton
+                android:id="@+id/imageButton4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="ModificarAlumnos"
-                android:text="Actualizar" />
+                app:srcCompat="@drawable/actualizar1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/imageButton5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="llenar"
+                app:srcCompat="@drawable/camara1" />
+
+            <ImageButton
+                android:id="@+id/imageButton6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="Menu"
+                app:srcCompat="@drawable/menu1" />
         </LinearLayout>
 
     </LinearLayout>
