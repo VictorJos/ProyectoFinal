@@ -9,18 +9,18 @@ import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 
-public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
+public class AdminSQLiteOpenHelper1 extends SQLiteOpenHelper {
 
 
 
-    public AdminSQLiteOpenHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
-        super(context,"FB2", factory, 1);
+    public AdminSQLiteOpenHelper1(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
+        super(context,"FB1", factory, 1);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table alumnos(codigo int primary key , nombre Text, apellido Text, telefono Text )");
-          //db.execSQL("create table notas( codigo int primary key,nombre Text, apellido Text, nota1 real, nota2 real,nota3 real,total real)");
+        //db.execSQL("create table alumnos(codigo int primary key , nombre Text, apellido Text, telefono Text )");
+          db.execSQL("create table notas( codigo int primary key,nombre Text, apellido Text, nota1 real, nota2 real,nota3 real,total real)");
     }
 
     @Override
@@ -30,18 +30,16 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
     public ArrayList llenar_lv(){
         ArrayList<String> lista = new ArrayList<>();
         SQLiteDatabase database = this.getWritableDatabase();
-        String q = "SELECT * FROM  alumnos";
+        String q = "SELECT * FROM  notas";
         Cursor registros = database.rawQuery(q, null);
         if(registros.moveToFirst()){
             do {
-                lista.add(registros.getString(2)+"  " + registros.getString(1));
+                lista.add(registros.getString(2)+"   " + registros.getString(1)+" :"+registros.getString(6));
             }while (registros.moveToNext());
         }
 
         return lista;
 
     }
-
-
 
 }

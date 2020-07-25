@@ -28,17 +28,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="00001"
+            android:hint="Cedula"
             android:inputType="textPersonName" />
-
-        <EditText
-            android:id="@+id/txtCedula"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="  Cedula"
-            android:inputType="textPersonName"
-            android:textSize="14sp" />
 
         <EditText
             android:id="@+id/txtNombre"
@@ -138,7 +129,7 @@
         <ImageView
             android:id="@+id/imageView4"
             android:layout_width="match_parent"
-            android:layout_height="148dp"
+            android:layout_height="98dp"
             app:srcCompat="@drawable/francisb" />
 
         <ImageButton
@@ -159,7 +150,7 @@
             android:id="@+id/imageButton10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="ModificarAlumnos"
+            android:onClick="ModificarNotas"
             app:srcCompat="@drawable/actualizar1" />
 
         <ImageButton
@@ -182,6 +173,13 @@
             android:layout_height="wrap_content"
             android:onClick="menu"
             app:srcCompat="@drawable/menu1" />
+
+        <ImageButton
+            android:id="@+id/imageButton7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="BuscarAlumnos"
+            app:srcCompat="@drawable/alumno1" />
 
     </LinearLayout>
 

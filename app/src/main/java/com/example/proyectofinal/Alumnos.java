@@ -131,21 +131,15 @@ public class Alumnos extends AppCompatActivity {
         String nombre= ed1.getText().toString();
         String apellido= ed2.getText().toString();
         String telefono= ed3.getText().toString();
-        //String correo=ed4.getText().toString();
-        //String telefono=ed5.getText().toString();
-        //String nombrer=ed6.getText().toString();
-        //String direccion=ed7.getText().toString();
-        if(!codigo.isEmpty() &&!nombre.isEmpty() && !apellido.isEmpty() && !telefono.isEmpty())
+
+        if(!codigo.isEmpty() && !nombre.isEmpty() && !apellido.isEmpty() && !telefono.isEmpty())
         {
             ContentValues registro = new ContentValues();
-            //registro.put("codigo",codigo);
+            registro.put("codigo",codigo);
             registro.put("nombre",nombre);
             registro.put("apellido",apellido);
-            registro.put("cedula",telefono);
-            ///registro.put("correo",correo);
-            //registro.put("telefono",telefono);
-            //registro.put("nombrer",nombrer);
-            //registro.put("direccion",direccion);
+            registro.put("telefono",telefono);
+
 
             int cantidad = db.update("alumnos",registro,"codigo="+codigo,null);
             db.close();
@@ -153,7 +147,7 @@ public class Alumnos extends AppCompatActivity {
             if(cantidad==1)
             {
                 Toast.makeText(this,"Registro Modificado Exitosamente", Toast.LENGTH_SHORT).show();
-                //ed0.setText("");
+                ed0.setText("");
                 ed1.setText("");
                 ed2.setText("");
                 ed3.setText("");

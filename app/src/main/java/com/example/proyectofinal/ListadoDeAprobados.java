@@ -25,7 +25,7 @@ public class ListadoDeAprobados extends AppCompatActivity {
         setContentView(R.layout.activity_listado_de_aprobados);
         lv = (ListView) findViewById(R.id.lista);
 
-        AdminSQLiteOpenHelper db = new AdminSQLiteOpenHelper(getApplicationContext(), null,null, 1);
+        AdminSQLiteOpenHelper1 db = new AdminSQLiteOpenHelper1(getApplicationContext(), null,null, 1);
         lista = db.llenar_lv();
         adaptador = new ArrayAdapter(this, android.R.layout.simple_list_item_1, lista);
         lv.setAdapter(adaptador);

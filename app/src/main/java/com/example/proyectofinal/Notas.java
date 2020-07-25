@@ -18,7 +18,7 @@ public class Notas extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notas);
         ed0=findViewById(R.id.txtCod);
-        ed1= findViewById(R.id.txtCedula);
+        //ed1= findViewById(R.id.txtCedula);
         ed2= findViewById(R.id.txtNombre);
         ed3=findViewById(R.id.txtApellido);
         ed4= findViewById(R.id.txtnota1);
@@ -29,12 +29,12 @@ public class Notas extends AppCompatActivity {
 
     }
     public void  Buscarnota(View v){
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administracion",null,1);
+        AdminSQLiteOpenHelper1 admin = new AdminSQLiteOpenHelper1(this, "administracion",null,1);
         SQLiteDatabase db= admin.getWritableDatabase();
-        String cedula= ed1.getText().toString();
-        if(!cedula.isEmpty() ){
+        String codigo= ed0.getText().toString();
+        if(!codigo.isEmpty() ){
             Cursor fila=db.rawQuery
-                    ("select nombre, apellido, nota1, nota2, nota3, total from notas where cedula="+ cedula, null);
+                    ("select nombre, apellido, nota1, nota2, nota3, total from notas where codigo="+ codigo, null);
             if(fila.moveToFirst()){
 
                 ed2.setText(fila.getString(0));
@@ -68,31 +68,31 @@ public class Notas extends AppCompatActivity {
 
     }
     public void InsertarNota(View v){
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administracion",null,1);
+        AdminSQLiteOpenHelper1 admin = new AdminSQLiteOpenHelper1(this, "administracion",null,1);
         SQLiteDatabase db= admin.getWritableDatabase();
         String codigo= ed0.getText().toString();
-        String cedula= ed1.getText().toString();
+        //String cedula= ed1.getText().toString();
         String nombre= ed2.getText().toString();
         String apellido= ed3.getText().toString();
         String nota1= ed4.getText().toString();
         String nota2=ed5.getText().toString();
         String nota3=ed6.getText().toString();
-        String totalr=ed7.getText().toString();
+        String total=ed7.getText().toString();
 
-        if(!codigo.isEmpty()  && !nombre.isEmpty() && !apellido.isEmpty() &&!cedula.isEmpty() && !nota1.isEmpty() && !nota2.isEmpty() && !nota3.isEmpty() && !totalr.isEmpty()){
+        if(!codigo.isEmpty()  && !nombre.isEmpty() && !apellido.isEmpty()  && !nota1.isEmpty() && !nota2.isEmpty() && !nota3.isEmpty() && !total.isEmpty()){
             ContentValues registro = new ContentValues();
             registro.put("codigo",codigo);
             registro.put("nombre",nombre);
             registro.put("apellido",apellido);
-            registro.put("cedula",cedula);
+           // registro.put("cedula",cedula);
             registro.put("nota1",nota1);
             registro.put("nota2",nota2);
             registro.put("nota3",nota3);
-            registro.put("total",totalr);
+            registro.put("total",total);
             db.insert("notas", null, registro);
             db.close();
             ed0.setText("");
-            ed1.setText("");
+            //ed1.setText("");
             ed2.setText("");
             ed3.setText("");
             ed4.setText("");
@@ -113,28 +113,27 @@ public class Notas extends AppCompatActivity {
     }
     public void ModificarNotas(View v){
 
-        AdminSQLiteOpenHelper admin= new AdminSQLiteOpenHelper
+        AdminSQLiteOpenHelper1 admin= new AdminSQLiteOpenHelper1
                 (this,"administracion",null,1);
         SQLiteDatabase db= admin.getWritableDatabase();
         String codigo= ed0.getText().toString();
-        String cedula= ed1.getText().toString();
+       // String cedula= ed1.getText().toString();
         String nombre= ed2.getText().toString();
         String apellido= ed3.getText().toString();
         String nota1= ed4.getText().toString();
         String nota2=ed5.getText().toString();
         String nota3=ed6.getText().toString();
-        String totalr=ed7.getText().toString();
-         if(!codigo.isEmpty()  && !nombre.isEmpty() && !apellido.isEmpty() &&!cedula.isEmpty() && !nota1.isEmpty() && !nota2.isEmpty() && !nota3.isEmpty() && !totalr.isEmpty())
+        String total=ed7.getText().toString();
+         if(!codigo.isEmpty()  && !nombre.isEmpty() && !apellido.isEmpty() && !nota1.isEmpty() && !nota2.isEmpty() && !nota3.isEmpty() && !total.isEmpty())
         {
             ContentValues registro = new ContentValues();
             registro.put("codigo",codigo);
             registro.put("nombre",nombre);
             registro.put("apellido",apellido);
-            registro.put("cedula",cedula);
             registro.put("nota1",nota1);
             registro.put("nota2",nota2);
             registro.put("nota3",nota3);
-            registro.put("total",totalr);
+            registro.put("total",total);
 
             int cantidad = db.update("notas",registro,"codigo="+codigo,null);
             db.close();
@@ -143,7 +142,7 @@ public class Notas extends AppCompatActivity {
             {
                 Toast.makeText(this,"Articulo Modificado Exitosamente", Toast.LENGTH_SHORT).show();
                 ed0.setText("");
-                ed1.setText("");
+                //ed1.setText("");
                 ed2.setText("");
                 ed3.setText("");
                 ed4.setText("");
@@ -161,7 +160,7 @@ public class Notas extends AppCompatActivity {
 
     }
     public void EliminarNotas(View v){
-        AdminSQLiteOpenHelper admin= new AdminSQLiteOpenHelper
+        AdminSQLiteOpenHelper1 admin= new AdminSQLiteOpenHelper1
                 (this,"administracion",null,1);
         SQLiteDatabase db= admin.getWritableDatabase();
         String codigo=ed0.getText().toString();
@@ -171,7 +170,7 @@ public class Notas extends AppCompatActivity {
             db.close();
 
             ed0.setText("");
-            ed1.setText("");
+            //ed1.setText("");
             ed2.setText("");
             ed3.setText("");
             ed4.setText("");
@@ -189,5 +188,30 @@ public class Notas extends AppCompatActivity {
         {
             Toast.makeText(this,"Debe introducir el codigo de la  nota", Toast.LENGTH_SHORT).show();
         }
+    }
+    public void  BuscarAlumnos(View v){
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administracion",null,1);
+        SQLiteDatabase db= admin.getWritableDatabase();
+        String codigo= ed0.getText().toString();
+        if(!codigo.isEmpty() ){
+            Cursor fila=db.rawQuery
+                    ("select nombre, apellido from alumnos where codigo="+ codigo, null);
+            if(fila.moveToFirst()){
+
+                ed2.setText(fila.getString(0));
+                ed3.setText(fila.getString(1));
+
+                ;
+                db.close();
+
+            }
+            else{
+                Toast.makeText(this, "No exixte el nombre", Toast.LENGTH_SHORT).show();
+            }
+        }
+        else{
+            Toast.makeText(this, "Introdusca la cedula correcta", Toast.LENGTH_SHORT).show();
+        }
+
     }
 }

@@ -24,9 +24,9 @@ public class Menu extends AppCompatActivity {
         Toast.makeText(getApplicationContext(),"Bienvenido A Notas",Toast.LENGTH_LONG).show();
         startActivity(intent);
     }
-    public void ListadoReprobados(View v){
-        Intent intent= new Intent(Menu.this, ListadoDeReprobados.class);
-        Toast.makeText(getApplicationContext(),"Bienvenido Listado De Reprobados",Toast.LENGTH_LONG).show();
+    public void ListaNotas(View v){
+        Intent intent= new Intent(Menu.this, ListadoDeAprobados.class);
+        Toast.makeText(getApplicationContext(),"Bienvenido Listado De Notass",Toast.LENGTH_LONG).show();
         startActivity(intent);
     }
     public void ListadoAprobados(View v){
