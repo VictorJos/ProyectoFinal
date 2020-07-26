@@ -189,6 +189,16 @@ public class Notas extends AppCompatActivity {
             Toast.makeText(this,"Debe introducir el codigo de la  nota", Toast.LENGTH_SHORT).show();
         }
     }
+    public void LimpiarDatos(View v){
+        ed0.setText("");
+        //ed1.setText("");
+        ed2.setText("");
+        ed3.setText("");
+        ed4.setText("");
+        ed5.setText("");
+        ed6.setText("");
+        ed7.setText("");
+    }
     public void  BuscarAlumnos(View v){
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administracion",null,1);
         SQLiteDatabase db= admin.getWritableDatabase();

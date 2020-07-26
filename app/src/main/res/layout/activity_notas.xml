@@ -7,12 +7,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
+        android:background="#FFFFFF"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#FFFFFF"
             android:text=" Registro De Notas"
             android:textColor="#191818"
             android:textSize="24sp" />
@@ -20,15 +22,16 @@
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="match_parent"
-            android:layout_height="98dp"
-            app:srcCompat="@drawable/estudiante" />
+            android:layout_height="138dp"
+            android:background="#FFFFFF"
+            app:srcCompat="@drawable/imagen3" />
 
         <EditText
             android:id="@+id/txtCod"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Cedula"
+            android:hint="  Cedula"
             android:inputType="textPersonName" />
 
         <EditText
@@ -38,7 +41,7 @@
             android:ems="10"
             android:hint="  Nombre"
             android:inputType="textPersonName"
-            android:textSize="14sp" />
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/txtApellido"
@@ -47,7 +50,7 @@
             android:ems="10"
             android:hint="  Apellido"
             android:inputType="textPersonName"
-            android:textSize="14sp" />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/textView5"
@@ -124,18 +127,29 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
+        android:background="#FFFFFF"
         android:orientation="vertical">
 
         <ImageView
             android:id="@+id/imageView4"
             android:layout_width="match_parent"
-            android:layout_height="98dp"
+            android:layout_height="171dp"
+            android:background="#FFFFFF"
             app:srcCompat="@drawable/francisb" />
+
+        <ImageButton
+            android:id="@+id/imageButton7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:onClick="BuscarAlumnos"
+            app:srcCompat="@drawable/alumno1" />
 
         <ImageButton
             android:id="@+id/imageButton9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#FFFFFF"
             android:onClick="InsertarNota"
             app:srcCompat="@drawable/guardar1" />
 
@@ -143,13 +157,23 @@
             android:id="@+id/imageButton8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#FFFFFF"
             android:onClick="Buscarnota"
             app:srcCompat="@drawable/buscar1" />
+
+        <ImageButton
+            android:id="@+id/imageButton12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:onClick="Calcular"
+            app:srcCompat="@drawable/calculara1" />
 
         <ImageButton
             android:id="@+id/imageButton10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#FFFFFF"
             android:onClick="ModificarNotas"
             app:srcCompat="@drawable/actualizar1" />
 
@@ -157,29 +181,25 @@
             android:id="@+id/imageButton11"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#FFFFFF"
             android:onClick="EliminarNotas"
             app:srcCompat="@drawable/eliminar1" />
 
         <ImageButton
-            android:id="@+id/imageButton12"
+            android:id="@+id/imageButton2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="Calcular"
-            app:srcCompat="@drawable/calculara1" />
-
-        <ImageButton
-            android:id="@+id/imageButton13"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
             android:onClick="menu"
-            app:srcCompat="@drawable/menu1" />
+            app:srcCompat="@drawable/salir1" />
 
         <ImageButton
-            android:id="@+id/imageButton7"
+            android:id="@+id/imageButton3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="BuscarAlumnos"
-            app:srcCompat="@drawable/alumno1" />
+            android:background="#FFFFFF"
+            android:onClick="LimpiarDatos"
+            app:srcCompat="@drawable/limpiar1" />
 
     </LinearLayout>
 

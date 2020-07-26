@@ -4,14 +4,14 @@
     android:id="@+id/principal"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#3448B3"
+    android:background="#FFFFFF"
     android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/num_telefono"
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
-        android:background="#F6F3F0"
+        android:background="#E9F1F4"
         android:baselineAligned="true"
         android:orientation="vertical">
 
@@ -19,118 +19,124 @@
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="   Nuevo Estudiante"
-            android:textColor="@color/design_default_color_on_secondary"
+            android:background="#FFFFFF"
+            android:text="Nuevo Estudiante"
+            android:textColor="#0C0C0C"
             android:textSize="30sp" />
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
-            android:layout_height="157dp"
-            app:srcCompat="@drawable/francisb" />
+            android:layout_height="110dp"
+            android:background="#FFFFFF"
+            app:srcCompat="@drawable/imagen3" />
 
         <EditText
-            android:id="@+id/txtCodigo1"
+            android:id="@+id/txtCodigo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#FFFFFF"
             android:ems="10"
             android:hint="Cedula"
             android:inputType="textPersonName"
-            android:textSize="12sp" />
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/txtNombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#FFFFFF"
             android:ems="10"
-            android:hint="Nombre1, Nombre2"
+            android:hint="Primer Nombre, Segundo Nombre"
             android:inputType="textPersonName"
-            android:textSize="12sp" />
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/txtApellido"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#FFFFFF"
             android:ems="10"
-            android:hint="Apellido1,Apellido2"
+            android:hint="Primer Apellido, Segundo Apellido"
             android:inputType="textPersonName"
-            android:textSize="12sp" />
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/txtCedula"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#FFFFFF"
             android:ems="10"
             android:hint="Telefono"
             android:inputType="textPersonName"
-            android:textSize="12sp" />
-
+            android:textSize="18sp" />
 
         <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="60dp"
-            android:orientation="horizontal">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF"
+            android:orientation="vertical">
 
             <ImageButton
-                android:id="@+id/imageButton"
-                android:layout_width="wrap_content"
+                android:id="@+id/imageButton22"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:background="#FFFFFF"
+                android:contentDescription="Guardar"
                 android:onClick="RegistrarAlumno"
                 app:srcCompat="@drawable/guardar1" />
 
             <ImageButton
-                android:id="@+id/imageButton2"
-                android:layout_width="wrap_content"
+                android:id="@+id/imageButton23"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:background="#FFFFFF"
                 android:onClick="BuscarAlumnos"
                 app:srcCompat="@drawable/buscar1" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="60dp"
-            android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/imageButton3"
-                android:layout_width="wrap_content"
+                android:id="@+id/imageButton24"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:background="#FFFFFF"
+                android:onClick="ModificarAlumnos"
+                app:srcCompat="@drawable/actualizar1" />
+
+            <ImageButton
+                android:id="@+id/imageButton25"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
                 android:onClick="EliminarAlumnos"
                 app:srcCompat="@drawable/eliminar1" />
 
             <ImageButton
-                android:id="@+id/imageButton4"
-                android:layout_width="wrap_content"
+                android:id="@+id/imageButton26"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="ModificarAlumnos"
-                app:srcCompat="@drawable/actualizar1" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:orientation="horizontal">
-
-            <ImageButton
-                android:id="@+id/imageButton5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:background="#FFFFFF"
                 android:onClick="llenar"
                 app:srcCompat="@drawable/camara1" />
 
             <ImageButton
-                android:id="@+id/imageButton6"
-                android:layout_width="wrap_content"
+                android:id="@+id/imageButton"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:background="#FFFFFF"
                 android:onClick="Menu"
-                app:srcCompat="@drawable/menu1" />
+                app:srcCompat="@drawable/salir1" />
+
+            <ImageButton
+                android:id="@+id/imageButton4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:onClick="LimpiarAlumnos"
+                app:srcCompat="@drawable/limpiar1" />
+
+
         </LinearLayout>
+
 
     </LinearLayout>
 

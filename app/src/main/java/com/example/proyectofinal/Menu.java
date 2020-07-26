@@ -39,4 +39,7 @@ public class Menu extends AppCompatActivity {
         Toast.makeText(getApplicationContext(),"Bienvenido Listado De Aprobados",Toast.LENGTH_LONG).show();
         startActivity(intent);
     }
+    public void Salir(View v){
+        finish();
+    }
 }

@@ -25,7 +25,7 @@ public class Alumnos extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alumnos);
         img = findViewById(R.id.imageView);
-        ed0= findViewById(R.id.txtCodigo1);
+        ed0= findViewById(R.id.txtCodigo);
         ed1= findViewById(R.id.txtNombre);
         ed2= findViewById(R.id.txtApellido);
         ed3= findViewById(R.id.txtCedula);
@@ -87,6 +87,13 @@ public class Alumnos extends AppCompatActivity {
         else{
             Toast.makeText(this, "Debe Lllenar Todos Los Campos", Toast.LENGTH_SHORT).show();
         }
+
+    }
+    public void LimpiarAlumnos(View v){
+        ed0.setText("");
+        ed1.setText("");
+        ed2.setText("");
+        ed3.setText("");
 
     }
     public void  BuscarAlumnos(View v){
